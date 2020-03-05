@@ -31,6 +31,18 @@ p {
   opacity: .8;
 }
 
+h1::-moz-selection,
+p::-moz-selection {
+  background: #333333;
+  color: #fff;
+}
+
+h1::selection,
+p::selection {
+  background: #333333;
+  color: #fff;
+}
+
 /* nav
 =================== */
 ul {
@@ -228,7 +240,8 @@ footer p {
         grid-template-columns: 1fr 1.2fr 1.4fr;
     -ms-grid-rows: 1fr 4fr 3fr 2fr;
         grid-template-rows: 1fr 4fr 3fr 2fr;
-        grid-template-areas: "main    main    nav" "main    main    candy" "nom-yum nom-yum candy" "footer  footer  candy";
+        grid-template-areas: "main    main    nav" "main    main    candy" "nom-yum nom-yum candy"
+ "footer  footer  candy";
     height: 100vh;
     margin: .2rem;
   }
@@ -255,6 +268,9 @@ footer p {
     grid-area: main;
     text-align: left;
     padding: 5rem 6rem 5rem 4rem;
+  }
+  main h1 {
+    font-size: 2.5rem;
   }
   .candy {
     -ms-grid-row: 2;
