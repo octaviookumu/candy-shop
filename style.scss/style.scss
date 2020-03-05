@@ -30,6 +30,13 @@ p {
 	line-height: 1.7;
 	opacity: .8;
 }
+h1,
+p {
+	&::selection {
+		background: #333333;
+		color: #fff;
+	}
+}
 
 /* nav
 =================== */
@@ -216,6 +223,9 @@ footer {
 		grid-area: main;
 		text-align: left;
 		padding: 5rem 6rem 5rem 4rem;
+		h1 {
+			font-size: 2.5rem;
+		}
 	}
 	.candy {
 		grid-area: candy;
