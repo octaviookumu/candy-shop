@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+}
+
+/* typography
+=================== */
+
+h1 {
+	font-weight: 800;
+	font-size: 1.7rem;
+	margin-top: 0;
+	text-transform: uppercase;
+}
+
+p {
+	margin-top: 0;
+	line-height: 1.7;
+	opacity: .8;
+}
+
+/* nav
+=================== */
+
+ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+}
+li {
+	list-style: none;
+}
+
+.store {
+	background: #333333;
+	padding: .7rem 0;
+	a {
+		text-decoration: none;
+		padding: .6rem;
+		color: #fff;
+		opacity: .8;
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.flavours {
+	background: #fff;
+	margin-top: .8rem;
+	padding: .5rem;
+	visibility: hidden;
+	a {
+		text-decoration: none;
+		padding: .7rem;
+		color: #333333;
+		font-weight: 800;
+	}
+}
+
+/* flavour selections
+=================== */
+
+.cho:hover,
+.cho:focus {
+	background: brown;
+	color: #fff;
+}
+
+.mel:hover,
+.mel:focus {
+	background: pink;
+	color: #fff;
+}
+
+.roy:hover,
+.roy:focus {
+	background: purple;
+	color: #fff;
+}
+
+.swe:hover,
+.swe:focus {
+	background: salmon;
+	color: #fff;
+}
+
+/* image
+=================== */
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* mixins
+=================== */
+
+@mixin white-bars {
+	content: "";
+	position: absolute;
+	width: 5rem;
+	height: .1rem;
+	top: 45%;
+	background: #fff;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(5, auto);
+	grid-template-areas: "nav" "main" "candy" "nom-yum" "footer";
+
+	margin: .5rem;
+}
+
+nav {
+	grid-area: nav;
+	padding: 1rem 0;
+}
+
+main {
+	grid-area: main;
+	background: #fffadf;
+	text-align: center;
+}
+
+.candy {
+	grid-area: candy;
+}
+
+.nom-yum {
+	grid-area: nom-yum;
+	text-align: center;
+	color: #fff;
+}
+.nom {
+	background: #c4b35a;
+	padding: 1.4rem 0 .8rem 0;
+	position: relative;
+	&:before {
+		@include white-bars;
+		left: 6%;
+	}
+	&:after {
+		@include white-bars;
+		right: 6%;
+	}
+}
+.yum {
+	background: #333333;
+	padding: 1.4rem 0 .8rem 0;
+	position: relative;
+	&:before {
+		@include white-bars;
+		left: 6%;
+	}
+	&:after {
+		@include white-bars;
+		right: 6%;
+	}
+}
+
+footer {
+	grid-area: footer;
+	text-align: center;
+	background: #202020;
+	padding: 1rem;
+	color: #fff;
+	p {
+		opacity: .7;
+	}
+}
+
+@media (min-width: 45rem) {
+	body {
+		height: 100vh;
+	}
+
+	.grid-container {
+		grid-template-columns: 1fr 1.2fr 1.4fr;
+		grid-template-rows: 1fr 4fr 3fr 2fr;
+		grid-template-areas: "main    main    nav" "main    main    candy" "nom-yum nom-yum candy"
+			"footer  footer  candy";
+
+		height: 100vh;
+		margin: .2rem;
+	}
+	img {
+		height: 100%;
+		width: 100%;
+	}
+	a {
+		padding: 0 1rem;
+	}
+	.store a:last-of-type {
+		margin-left: auto;
+	}
+	nav {
+		grid-area: nav;
+	}
+	main {
+		grid-area: main;
+		text-align: left;
+		padding: 5rem 6rem 5rem 4rem;
+	}
+	.candy {
+		grid-area: candy;
+	}
+	.nom-yum {
+		grid-area: nom-yum;
+		display: flex;
+	}
+	.nom {
+		flex-basis: 50%;
+		padding: 4.6rem 0;
+	}
+	.yum {
+		flex-basis: 50%;
+		padding: 4.6rem 0;
+	}
+	footer {
+		grid-area: footer;
+		padding: 3rem 0;
+	}
+}
+footer {
+	a {
+		color: #fff;
+		text-decoration: none;
+		&:hover {
+			color: red;
+		}
+	}
+}
