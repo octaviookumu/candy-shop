@@ -76,6 +76,10 @@ li {
   opacity: 1;
 }
 
+.store a:focus {
+  opacity: 1;
+}
+
 .flavours {
   background: #fff;
   margin-top: .8rem;
